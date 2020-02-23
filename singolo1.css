@@ -58,3 +58,15 @@ h1 span {
 .navbar-list:first-child {
     margin-left: 0;
 }
+
+
+/*... SLIDER ...*/
+
+.slider-part {
+    height: 593px;
+    display: flex;
+    background-color: #f16c65;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 7px solid #ea676c;
+}
