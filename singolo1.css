@@ -1,0 +1,60 @@
+@import url('./lato-font');
+body {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.container {
+    max-width: 1020px;
+    margin: 0 auto;
+}
+
+
+/*... HEADER ...*/
+
+.header {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2d2f3b;
+    border-bottom: 7px solid #313745;
+}
+
+h1 {
+    color: #fff;
+    font-family: 'Lato-Bold', sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 6px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+h1 span {
+    color: #f16c65;
+}
+
+.navbar {
+    width: 371px;
+}
+
+.navbar-list {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-item {
+    color: #fff;
+    font-family: 'Lato-Bold', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.navbar-list:first-child {
+    margin-left: 0;
+}
