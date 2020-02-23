@@ -70,3 +70,135 @@ h1 span {
     justify-content: space-between;
     border-bottom: 7px solid #ea676c;
 }
+
+
+/*... SERVICES ...*/
+
+.services {
+    height: 497px;
+    background-color: #f2f2f2;
+    border-bottom: 7px solid #fff;
+}
+
+.services-title {
+    margin: 0;
+    color: #666d89;
+    font-family: 'Lato-Black', sans-serif;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 18px;
+}
+
+.services-description {
+    width: 940px;
+    height: 57px;
+    font-family: 'Lato-Light', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 30px;
+    color: #767e9e;
+}
+
+.services-list {
+    width: 940px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.services-item {
+    flex-basis: 30%;
+    display: flex;
+}
+
+.item-image {
+    position: relative;
+    width: 57px;
+    height: 56px;
+    margin: 0;
+    margin-right: 20px;
+    margin-top: 10px;
+    border: 2px solid #666d89;
+    border-radius: 100%;
+}
+
+.image-icon {
+    position: absolute;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.pen {
+    top: 13px;
+    bottom: 9px;
+    left: 13px;
+    right: 13px;
+    width: 32px;
+    height: 32px;
+}
+
+.bulb {
+    top: 11px;
+    bottom: 13px;
+    left: 18px;
+    right: 18px;
+    width: 22px;
+    height: 32px;
+}
+
+.heart {
+    top: 13px;
+    bottom: 13px;
+    left: 12px;
+    right: 12px;
+    width: 32px;
+    height: 28px;
+}
+
+.bubble {
+    top: 14px;
+    bottom: 14px;
+    left: 11px;
+    right: 11px;
+    width: 32px;
+    height: 28px;
+}
+
+.phone {
+    top: 11px;
+    bottom: 11px;
+    left: 16px;
+    right: 16px;
+    width: 22px;
+    height: 32px;
+}
+
+.star {
+    top: 11px;
+    bottom: 11px;
+    left: 12px;
+    right: 12px;
+    width: 32px;
+    height: 31px;
+}
+
+.item-title {
+    text-transform: capitalize;
+    font-size: 18px;
+    line-height: 18px;
+    color: #666d89;
+    font-family: 'Lato-Black', sans-serif;
+    font-weight: 900;
+}
+
+.item-description {
+    width: 219px;
+    height: 128px;
+    font-size: 12px;
+    line-height: 22px;
+    color: #767e9e;
+    font-family: "Lato-Regular", sans-serif;
+    font-weight: 400;
+    text-align: left;
+}
