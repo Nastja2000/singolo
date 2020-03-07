@@ -1,1 +1,248 @@
 @import url('./lato-font');
+body {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.container {
+    width: 1020px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+
+/*... QUOTE-BLOCK ...*/
+
+.quote-block {
+    height: 648px;
+    background-color: #f16c65;
+    border-bottom: 7px solid #ea676c;
+}
+
+.title {
+    margin: 0;
+    padding-top: 69px;
+    padding-left: 39px;
+    color: #666d89;
+    font-family: 'Lato-Black', sans-serif;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 18px;
+    text-transform: capitalize;
+}
+
+.quote-block-title {
+    color: #f0d8d9;
+}
+
+.description {
+    width: 940px;
+    height: 57px;
+    padding-left: 40px;
+    padding-top: 8px;
+    font-family: 'Lato-Light', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: -0.0095px;
+    text-transform: initial;
+    color: #757e9d;
+}
+
+.quote-block-description {
+    color: #f0d8d9;
+}
+
+.layout-columns {
+    width: 940px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-form {
+    width: 587px;
+    height: 364px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 13px 15px;
+    color: #f0d8d9;
+    background-color: #d6554f;
+    border: 1px solid #d6554f;
+    border-radius: 5px;
+}
+
+.contact-form textarea {
+    height: 202px;
+    resize: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #f48c8f;
+    font-family: 'Lato-Regular', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21.56px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #f0d8d9;
+    outline: none;
+}
+
+.contact-form input:focus::placeholder,
+.contact-form textarea:focus::placeholder {
+    color: #f0d8d9;
+    font-family: 'Lato-Regular', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21.56px;
+}
+
+.contact-form input:invalid,
+.contact-form textarea:invalid {
+    color: #f0d8d9;
+    background-color: rgba(163, 122, 52, 0.1);
+    border: 1px solid #f0d8d9;
+    outline: none;
+}
+
+.contact-form input:invalid::placeholder,
+.contact-form textarea:invalid::placeholder {
+    color: #f0d8d9;
+    font-family: 'Lato-Regular', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21.56px;
+}
+
+.submit-button-container {
+    position: relative;
+    top: -14px;
+    min-width: 619px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 5px;
+    color: #f48c8f;
+    font-family: 'Lato-Bold', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21.56px;
+    text-transform: uppercase;
+    background-color: #d6554f;
+    border: none;
+    border-radius: 5px;
+}
+
+.form-line {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.contact-information {
+    width: 301px;
+    height: 194px;
+}
+
+.contact-information-title {
+    color: #f0d8d9;
+    font-family: "Lato-Black", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 17.86px;
+}
+
+.contact-information-description {
+    color: #f0d8d9;
+    font-family: "Lato-Regular", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 21.56px;
+    overflow: hidden;
+}
+
+.contact {
+    display: flex;
+    color: #f0d8d9;
+    font-family: "Lato-Regular", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 21.56px;
+    align-items: center;
+}
+
+.contact a {
+    color: #f0d8d9;
+    text-decoration: none;
+}
+
+.icon {
+    width: 13px;
+    height: 13px;
+    margin-right: 15px;
+}
+
+.icon-marker {
+    background-image: url(./assets/images/quote-block/icon-location.png);
+    background-repeat: no-repeat;
+}
+
+.icon-phone {
+    background-image: url(./assets/images/quote-block/icon-phone.png);
+    background-repeat: no-repeat;
+}
+
+.icon-letter {
+    background-image: url(./assets/images/quote-block/icon-letter.png);
+    background-repeat: no-repeat;
+}
+
+
+/*... FOOTER ...*/
+
+.social-links {
+    width: 100%;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.image-container {
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+    border: 1px solid #666d89;
+    border-radius: 100%;
+    text-decoration: none;
+}
+
+.image-container:hover {
+    background-color: #fff;
+}
+
+.image-container:active {
+    background-color: #d6dcf5;
+}
+
+.facebook {
+    position: relative;
+    top: 8px;
+    left: 11px;
+}
+
+.google,
+.linkedin,
+.twitter {
+    position: relative;
+    top: 8px;
+    left: 8px;
+}

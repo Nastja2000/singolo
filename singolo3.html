@@ -7,7 +7,8 @@
     <title>Singolo</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="./singolo3.css">
-    <link rel="stylesheet" href="./lato-font.css">
+    <!-- 
+    <link rel="stylesheet" href="./lato-font.css"> -->
 </head>
 
 <body>
@@ -17,11 +18,11 @@
             <pre class="quote-block-description description">Fusce dapibus,  tellus ac cursus  commodo, tortor mauris  condimentum. Duis mollis,  non commodo luctus,  nisi erat porttitor
 ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</pre>
             <div class="layout-columns">
-                <form action method="POST">
-                    <input type="text" name="name" placeholder="Name (Required)" required>
-                    <input type="email" name="email" placeholder="Email (Required)" required placeholder="[A-Za-z]{15}[\@][a-z]{6}[\.][a-z]{3}">
-                    <input type="text" name="subject" placeholder="Subject">
-                    <textarea name="description" placeholder="Describe your project in detail..."></textarea>
+                <form class="contact-form" action method="POST">
+                    <input class="form-line" type="text" name="name" placeholder="Name (Required)" required>
+                    <input class="form-line" type="email" name="email" placeholder="Email (Required)" required placeholder="[A-Za-z]{3-15}[\@][a-z]{4-10}[\.][a-z]{2-3}">
+                    <input class="form-line" type="text" name="subject" placeholder="Subject">
+                    <textarea class="form-line" name="description" placeholder="Describe your project in detail..."></textarea>
                     <div class="submit-button-container">
                         <button type="submit" class="submit-button button">submit</button>
                     </div>
@@ -47,7 +48,7 @@ ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo,
     </section>
     <footer class="footer">
         <div class="container">
-            <p class="footer-text"></p>
+            <h4 class="footer-text">© Copyright 2013</h4>
             <div class="social-links">
                 <a class="image-container" href="#" target="_blank"><img src="./assets/images/social-networks/facebook.png" alt="facebook" class="social-links-item facebook"></a>
                 <a class="image-container" href="#" target="_blank"><img src="./assets/images/social-networks/google+.png" alt="google+" class="social-links-item google"></a>
