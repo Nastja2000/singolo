@@ -87,7 +87,8 @@ body {
 }
 
 input::placeholder,
-textarea::placeholder {
+textarea::placeholder,
+::-ms-input-placeholder {
     position: relative;
     top: 1px;
     color: #f48c8f;
@@ -104,7 +105,8 @@ textarea::placeholder {
 }
 
 .contact-form input:focus::placeholder,
-.contact-form textarea:focus::placeholder {
+.contact-form textarea:focus::placeholder,
+::-ms-input-placeholder {
     color: #f0d8d9;
     font-family: 'Lato-Regular', sans-serif;
     font-size: 12px;
@@ -121,7 +123,8 @@ textarea::placeholder {
 }
 
 .contact-form input:invalid::placeholder,
-.contact-form textarea:invalid::placeholder {
+.contact-form textarea:invalid::placeholder,
+::-ms-input-placeholder {
     color: #f0d8d9;
     font-family: 'Lato-Regular', sans-serif;
     font-size: 12px;
