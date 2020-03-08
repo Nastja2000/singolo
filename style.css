@@ -573,6 +573,11 @@ h1 {
     border-bottom: 6px solid #fff;
 }
 
+.about-us-title {
+    position: relative;
+    top: -1px;
+}
+
 .people {
     position: relative;
     top: 11px;
@@ -663,7 +668,7 @@ h1 {
 /*... QUOTE-BLOCK ...*/
 
 .quote-block {
-    height: 647px;
+    height: 647.5px;
     background-color: #f16c65;
     border-bottom: 7px solid #ea676c;
 }
@@ -866,6 +871,7 @@ textarea::placeholder {
 .footer-text {
     margin: 0;
     margin-left: 41px;
+    margin-top: -1px;
     padding: 0;
     color: #666d89;
     font-family: "Lato-Light", sans-serif;
