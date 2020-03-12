@@ -113,29 +113,29 @@ h1 {
 
 .phone-vertical {
     position: absolute;
-    bottom: 81px;
-    left: 329px;
+    bottom: 15px;
+    left: 80px;
     height: 575px;
 }
 
 .phone-horizontal {
     position: absolute;
-    top: 233px;
-    right: 320px;
+    top: 138px;
+    right: 71px;
     height: 317px;
 }
 
 .arrow {
     position: absolute;
-    top: 374px;
+    top: 278px;
 }
 
 .arrow.left {
-    left: 289px;
+    left: 40px;
 }
 
 .arrow.right {
-    right: 287px;
+    right: 37px;
 }
 
 .arrow.left:hover,
