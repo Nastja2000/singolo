@@ -84,6 +84,7 @@ h1 {
     font-weight: 700;
     font-size: 12px;
     text-transform: uppercase;
+    text-decoration: none;
 }
 
 .navbar-item::before {
@@ -95,6 +96,14 @@ h1 {
 .navbar-item:hover,
 .item:hover {
     cursor: pointer;
+    color: #f16c65;
+}
+
+.item {
+    list-style: none;
+}
+
+.active {
     color: #f16c65;
 }
 
