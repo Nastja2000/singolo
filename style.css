@@ -102,29 +102,32 @@ h1 {
 /*... SLIDER ...*/
 
 .slider-part {
-    position: relative;
     height: 593px;
     background-color: #f16c65;
     border-bottom: 7px solid #ea676c;
 }
 
+.slider-part.container {
+    position: relative;
+}
+
 .phone-vertical {
     position: absolute;
-    bottom: 15px;
+    bottom: 81px;
     left: 329px;
     height: 575px;
 }
 
 .phone-horizontal {
     position: absolute;
-    top: 138px;
+    top: 233px;
     right: 320px;
     height: 317px;
 }
 
 .arrow {
     position: absolute;
-    top: 279px;
+    top: 374px;
 }
 
 .arrow.left {
@@ -487,7 +490,7 @@ h1 {
 .examples-item {
     width: 220px;
     height: 187px;
-    margin-bottom: px;
+    margin-bottom: 20px;
     overflow: hidden;
 }
 
