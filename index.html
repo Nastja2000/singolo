@@ -185,15 +185,16 @@ turpis, et consequat felis.  Quisque condimentum.</pre>
                 <pre class="quote-block-description description ">Fusce dapibus,  tellus ac cursus  commodo, tortor mauris  condimentum. Duis mollis,  non commodo luctus,  nisi erat porttitor
 ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</pre>
                 <div class="layout-columns ">
-                    <form class="contact-form " action="# " method="POST ">
-                        <input class="form-line " type="text " name="name " placeholder="Name (Required) " required>
-                        <input class="form-line " type="email " name="email " placeholder="Email (Required) " required placeholder="[A-Za-z]{3-15}[\@][a-z]{4-10}[\.][a-z]{2-3} ">
-                        <input class="form-line " type="text " name="subject " placeholder="Subject ">
-                        <textarea class="form-line " name="description " placeholder="Describe your project in detail... "></textarea>
+                    <form class="contact-form " action="# " method="POST " onsubmit="return false;">
+                        <input class="form-line name" type="text " name="name " placeholder="Name (Required) " required>
+                        <input class="form-line email" type="email " name="email " placeholder="Email (Required) " required placeholder="[A-Za-z]{3-15}[\@][a-z]{4-10}[\.][a-z]{2-3} ">
+                        <input class="form-line topic" type="text " name="subject " placeholder="Subject ">
+                        <textarea class="form-line description-input" name="description " placeholder="Describe your project in detail... "></textarea>
                         <div class="submit-button-container ">
                             <button type="submit " class="submit-button button " formmethod="post ">submit</button>
                         </div>
                     </form>
+
                     <div class="contact-information ">
                         <p class="contact-information-title ">Contact Information</p>
                         <pre class="contact-information-description ">Quisque hendrerit purus dapibus, ornare  nibh vitae, viver-
@@ -216,6 +217,14 @@ aliquet turpis, et consequat felis. </pre>
                 </div>
             </div>
         </section>
+        <div class="overlay hidden">
+            <div class="modal">
+                <h2 class="modal-title title">Письмо отправлено</h2>
+                <span class="modal-topic text"></span>
+                <span class="modal-description text"></span>
+                <button class="modal--close-button">OK</button>
+            </div>
+        </div>
     </main>
     <footer class="footer ">
         <div class="container footer ">

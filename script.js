@@ -46,6 +46,13 @@ const shuffle = (array) => {
     return array;
 }
 
+
+const generateDomElement = (node, element, ...classes) => {
+    node = document.createElement(element);
+    node.classList.add(...classes);
+    return node;
+}
+
 /*... HEADER ...*/
 
 /* Highlight current tab */
@@ -87,3 +94,56 @@ examplesList.addEventListener('click', function(event) {
     if (!li) return;
     addActiveClass(li, portfolioExampleClass);
 });
+
+/*... GET A QUOTE ...*/
+
+const generateSubmitModal = () => {
+    const nameInput = document.querySelector('.form-line.name');
+    const emailInput = document.querySelector('.form-line.email');
+    const topicInput = document.querySelector('.topic');
+    const descriptionInput = document.querySelector('.description-input');
+    const topic = document.querySelector('.modal-topic');
+    const description = document.querySelector('.modal-description');
+
+    document.querySelector('.overlay').classList.remove('hidden');
+
+    if (nameInput.value.length === 0 && emailInput.value.length === 0) {
+        alert('Заполните обязательные поля!');
+    } else {
+
+        if (topicInput.value.length !== 0 && descriptionInput.value.length !== 0) {
+            topic.innerHTML = `Тема: ${topicInput.value}`;
+            description.innerHTML = `Описание: ${descriptionInput.value}`;
+        }
+        if (topicInput.value.length === 0 && descriptionInput.value.length === 0) {
+            topic.innerHTML = 'Без темы';
+            description.innerHTML = 'Без описания';
+        }
+        if (topicInput.value.length !== 0 && descriptionInput.value.length === 0) {
+            topic.innerHTML = 'Без темы';
+            description.innerHTML = `Описание: ${descriptionInput.value}`;
+        }
+        if (topicInput.value.length === 0 && descriptionInput.value.length !== 0) {
+            topic.innerHTML = `Тема: ${topicInput.value}`;
+            description.innerHTML = 'Без описания';
+        }
+    }
+}
+
+const submitClickHandler = () => {
+    document.querySelector('.submit-button-container .submit-button ').addEventListener('click', () => {
+        generateSubmitModal();
+    });
+}
+
+submitClickHandler();
+
+
+const closeModalClickHandler = () => {
+
+    document.querySelector('.modal--close-button').addEventListener('click', () => {
+        document.querySelector('.overlay').classList.add("hidden");
+    });
+}
+
+closeModalClickHandler();
