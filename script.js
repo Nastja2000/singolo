@@ -53,6 +53,10 @@ const generateDomElement = (node, element, ...classes) => {
     return node;
 }
 
+const swap = (firstElement, secondElement) => {
+    [firstElement, secondElement] = [secondElement, firstElement];
+}
+
 /*... HEADER ...*/
 
 /* Highlight current tab */
@@ -66,6 +70,71 @@ headerNavbar.addEventListener('click', function(event) {
     window.location.hash = `${event.target.innerHTML}`;
 });
 
+/*... SLIDER ...*/
+const colorOfTheSecondSlide = '#648BF0';
+const colorOfTheSecondSlideBorder = '#4a7af3';
+const colorOfTheFirstSlide = '#f16c65';
+const colorOfTheFirstSlideBorder = '#ea676c';
+
+const leftArrow = document.querySelector('.arrow.left');
+const rightArrow = document.querySelector('.arrow.right');
+
+console.log(document.querySelector('.slider-part'));
+
+const slideImages = (turn) => {
+    let mainSliderBlock = document.querySelector('.slider-part');
+    let currentSlide = document.querySelector('.slide.current');
+    let hiddenSlide = document.querySelector('.slide.hiddn');
+    let temp = 0;
+    let currentBGColor, currentBorderColor;
+    if (currentSlide.classList.contains('first')) {
+        currentBGColor = colorOfTheSecondSlide;
+        currentBorderColor = colorOfTheSecondSlideBorder;
+    } else {
+        currentBGColor = colorOfTheFirstSlide;
+        currentBorderColor = colorOfTheFirstSlideBorder;
+    }
+
+    if (turn === true) {
+        currentSlide.classList.add('fadeOutLeft');
+        hiddenSlide.classList.add('fadeInRight');
+    } else {
+        currentSlide.classList.add('fadeOutRight');
+        hiddenSlide.classList.add('fadeInLeft');
+    }
+
+    mainSliderBlock.style.backgroundColor = currentBGColor;
+    mainSliderBlock.style.borderBottomColor = currentBorderColor;
+
+    swap(currentSlide, hiddenSlide);
+}
+
+/*
+turn = true -> to left;
+turn = false -> to right;
+*/
+
+leftArrowClickHandler = () => {
+    leftArrow.addEventListener('click', () => {
+        slideImages(true);
+    }, false);
+    leftArrow.removeEventListener('click', () => {
+        slideImages(true);
+    }, false);
+}
+
+leftArrowClickHandler();
+
+rightArrowClickHandler = () => {
+    rightArrow.addEventListener('click', () => {
+        slideImages(false);
+    }, false);
+    rightArrow.removeEventListener('click', () => {
+        slideImages(false);
+    }, false);
+}
+
+rightArrowClickHandler();
 /*... PORTFOLIO ...*/
 
 const showExamplesInRandomWay = () => {
