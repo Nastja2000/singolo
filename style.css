@@ -476,6 +476,11 @@ h1 {
     border: 1px solid #666d89;
 }
 
+.active-tab {
+    color: #dedede;
+    border-color: #dedede;
+}
+
 .categories-item:hover {
     cursor: pointer;
     color: #dedede;
@@ -496,89 +501,32 @@ h1 {
     overflow: hidden;
 }
 
-.examples-item {
-    width: 220px;
-    height: 187px;
-    margin-bottom: 20px;
+.examples-list {
+    height: 100%;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
     overflow: hidden;
 }
 
-.portfolio-examples div:nth-child(1) {
-    background-image: url(./assets/images/portfolio-part/yellow-submarine.png);
-    background-repeat: no-repeat;
-    background-position: 47% 24%;
-    margin-left: 0;
+.examples-item {
+    width: 210px;
+    height: 177px;
+    margin-bottom: 20px;
+    border: 5px solid transparent;
+    overflow: hidden;
+    cursor: pointer;
 }
 
-.portfolio-examples div:nth-child(2) {
-    background-image: url(./assets/images/portfolio-part/blond-fiona.png);
-    background-repeat: no-repeat;
-    background-position: 57% 50%;
+.examples-item:hover {
+    border: 5px solid #f06c64;
+    cursor: pointer;
 }
 
-.portfolio-examples div:nth-child(3) {
-    background-image: url(./assets/images/portfolio-part/doodling.png);
-    background-repeat: no-repeat;
-    background-position: 40% 2%;
-}
-
-.portfolio-examples div:nth-child(4) {
-    background-image: url(./assets/images/portfolio-part/robot.png);
-    background-repeat: no-repeat;
-    background-position: 60% 35%;
-    margin-right: 0;
-}
-
-.portfolio-examples div:nth-child(5) {
-    background-image: url(./assets/images/portfolio-part/party-in-da-house.png);
-    background-repeat: no-repeat;
-    background-position: 52% 17%;
-    margin-left: 0;
-}
-
-.portfolio-examples div:nth-child(6) {
-    background-image: url(./assets/images/portfolio-part/sdk-ide-etc.png);
-    background-repeat: no-repeat;
-    background-position: 41% 45%;
-}
-
-.portfolio-examples div:nth-child(7) {
-    background-image: url(./assets/images/portfolio-part/spore.png);
-    background-repeat: no-repeat;
-    background-position: 20% 21%;
-}
-
-.portfolio-examples div:nth-child(8) {
-    background-image: url(./assets/images/portfolio-part/chickens.png);
-    background-repeat: no-repeat;
-    background-position: 41% 34%;
-    margin-right: 0;
-}
-
-.portfolio-examples div:nth-child(9) {
-    background-image: url(./assets/images/portfolio-part/green-monstr.png);
-    background-repeat: no-repeat;
-    background-position: 50% 33%;
-    margin-left: 0;
-}
-
-.portfolio-examples div:nth-child(10) {
-    background-image: url(./assets/images/portfolio-part/lettering.png);
-    background-repeat: no-repeat;
-    background-position: 55.5% 23.5%;
-}
-
-.portfolio-examples div:nth-child(11) {
-    background-image: url(./assets/images/portfolio-part/white-monstr.png);
-    background-repeat: no-repeat;
-    background-position: 74% 77%;
-}
-
-.portfolio-examples div:nth-child(12) {
-    background-image: url(./assets/images/portfolio-part/something-brown.png);
-    background-repeat: no-repeat;
-    background-position: 47% 25%;
-    margin-right: 0;
+.active-example {
+    border: 5px solid #F06C64;
 }
 
 
