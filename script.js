@@ -35,14 +35,10 @@ const insertImagesToExamples = (arrayOfImages) => {
 insertImagesToExamples(images);
 
 const shuffle = (array) => {
-    console.log(array[0]);
-    console.log(array[1]);
     for (let i = array.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
     }
-    console.log(array[0]);
-    console.log(array[1]);
     return array;
 }
 
@@ -140,6 +136,7 @@ rightArrowClickHandler();
 const showExamplesInRandomWay = () => {
     images = shuffle(images);
     console.log(images);
+    insertImagesToExamples(images);
 };
 
 /* Highlight current tab */
@@ -151,6 +148,7 @@ portfolioNavbar.addEventListener('click', function(event) {
     if (event.target.tagName !== 'LI') return;
     addActiveClass(event.target, portfolioNavbarClass);
     showExamplesInRandomWay();
+
 });
 
 /* Highlight current example */
@@ -189,19 +187,22 @@ const generateSubmitModal = () => {
             description.innerHTML = 'Без описания';
         }
         if (topicInput.value.length !== 0 && descriptionInput.value.length === 0) {
-            topic.innerHTML = 'Без темы';
-            description.innerHTML = `Описание: ${descriptionInput.value}`;
-        }
-        if (topicInput.value.length === 0 && descriptionInput.value.length !== 0) {
             topic.innerHTML = `Тема: ${topicInput.value}`;
             description.innerHTML = 'Без описания';
+
+        }
+        if (topicInput.value.length === 0 && descriptionInput.value.length !== 0) {
+            topic.innerHTML = 'Без темы';
+            description.innerHTML = `Описание: ${descriptionInput.value}`;
         }
     }
 }
 
 const submitClickHandler = () => {
     document.querySelector('.submit-button-container .submit-button ').addEventListener('click', () => {
-        generateSubmitModal();
+        if (document.querySelector('.contact-form').checkValidity()) {
+            generateSubmitModal();
+        }
     });
 }
 
