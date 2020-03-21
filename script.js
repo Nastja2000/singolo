@@ -1,4 +1,8 @@
 /* General staff*/
+window.onload = () => {
+    scrollActive();
+}
+
 
 let images = [
     '<img src="./assets/images/portfolio-part/second/yellow_submarine.png" alt="yellow_submarine">',
@@ -65,6 +69,59 @@ headerNavbar.addEventListener('click', function(event) {
 
     window.location.hash = `${event.target.innerHTML}`;
 });
+
+window.addEventListener("scroll", scrollActive)
+
+function scrollActive() {
+    let headerHeight = document.querySelector('.header').offsetHeight;
+
+    let menuItems = headerNavbar.querySelectorAll('.item');
+    console.log(menuItems)
+
+
+    let servicesTop = document.querySelector('#services').offsetTop - headerHeight;
+    let portfolioTop = document.querySelector('#portfolio').offsetTop - headerHeight;
+    console.log(portfolioTop)
+    let aboutTop = document.querySelector('#about').offsetTop - headerHeight;
+    console.log(aboutTop)
+    let contactTop = document.querySelector('#contact').offsetTop - headerHeight;
+    console.log(contactTop)
+    let position = window.scrollY;
+    console.log(position)
+
+    if (position < servicesTop) {
+        menuItems.forEach(element => element.classList.remove('active'));
+        document.getElementById('home-item').classList.add('active');
+    };
+
+    if (position >= servicesTop && position < portfolioTop) {
+        menuItems.forEach(element => element.classList.remove('active'));
+        document.getElementById('services-item').classList.add('active');
+    };
+
+    if (position >= portfolioTop && position < aboutTop) {
+        menuItems.forEach(element => element.classList.remove('active'));
+        document.getElementById('portfolio-item').classList.add('active');
+    };
+
+    if (position >= aboutTop && position < contactTop) {
+        menuItems.forEach(element => element.classList.remove('active'));
+        document.getElementById('about-item').classList.add('active');
+    };
+
+    if (position >= contactTop ||
+        document.documentElement.scrollTop + document.documentElement.clientHeight == document.documentElement.scrollHeight ||
+        position > document.documentElement.scrollHeight - document.documentElement.clientHeight) {
+        menuItems.forEach(element => element.classList.remove('active'));
+        document.getElementById('contact-item').classList.add('active');
+    };
+}
+
+
+
+
+
+
 
 /*... SLIDER ...*/
 const colorOfTheSecondSlide = '#648BF0';
