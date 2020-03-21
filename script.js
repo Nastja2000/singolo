@@ -80,106 +80,102 @@ const rightArrow = document.querySelector('.arrow.right');
 
 const verticalBlock = document.querySelector('.phone-container.vertical');
 const horizontalBlock = document.querySelector('.phone-container.horizontal');
-console.log(verticalBlock);
+
 const verticalPhoneOn = document.querySelector('.phone-vertical');
 const verticalPhoneOff = document.querySelector('.vertical-off');
 
 const horizontalPhoneOn = document.querySelector('.phone-horizontal');
 const horizontalPhoneOff = document.querySelector('.horizontal-off');
-/* 
-verticalPhoneOn.addEventListener('click', () => {
-    console.log('hey');
-    verticalPhoneOn.classList.add('hidden');
-    verticalPhoneOff.classList.remove('hidden');
-});
 
-horizontalPhoneOn.addEventListener('click', () => {
-    console.log('hey');
-    horizontalPhoneOn.classList.add('hidden');
-    horizontalPhoneOff.classList.remove('hidden');
-}); */
 
 verticalBlock.addEventListener('click', function(event) {
-    console.log(event.target)
     if (event.target.tagName !== 'IMG') return;
     addActiveClass(event.target, 'hidden');
 });
 
-/* horizontalBlock.addEventListener('click', function(event) {
-    console.log(event.target)
-    if (event.target.tagName !== 'IMG') return;
-    addActiveClass(event.target, 'hidden');
-}); */
 
 const turnHorisontalPhone = () => {
     horizontalPhoneOn.addEventListener('click', () => {
-        console.log('hey');
         horizontalPhoneOn.classList.add('hidden');
         horizontalPhoneOff.classList.remove('hidden');
     });
 
     horizontalPhoneOff.addEventListener('click', () => {
-        console.log('hey');
         horizontalPhoneOff.classList.add('hidden');
         horizontalPhoneOn.classList.remove('hidden');
     });
 }
 
 turnHorisontalPhone();
-/* const slideImages = (turn) => {
-    let mainSliderBlock = document.querySelector('.slider-part');
-    let currentSlide = document.querySelector('.slide.current');
-    let hiddenSlide = document.querySelector('.slide.hiddn');
-    let temp = 0;
-    let currentBGColor, currentBorderColor;
-    if (currentSlide.classList.contains('first')) {
-        currentBGColor = colorOfTheSecondSlide;
-        currentBorderColor = colorOfTheSecondSlideBorder;
-    } else {
-        currentBGColor = colorOfTheFirstSlide;
-        currentBorderColor = colorOfTheFirstSlideBorder;
+
+
+/* slider actions */
+
+let slides = document.querySelectorAll('.slider .slide');
+let current = 0;
+console.log(slides[current]);
+
+const slider = (animationIn, animationOut) => {
+    for (let i = 0; i < slides.length; i++) {
+
+        slides[i].classList.add(animationOut);
+        slides[i].classList.remove(animationIn);
     }
 
-    if (turn === true) {
-        currentSlide.classList.add('fadeOutLeft');
-        hiddenSlide.classList.add('fadeInRight');
+    slides[current].classList.remove(animationOut);
+    slides[current].classList.add(animationIn);
+    slides[current].classList.remove('opacity0');
+}
+
+const changeBGColor = () => {
+    if (slides[current].getAttribute('class').indexOf('second') !== -1) {
+        document.querySelector('.slider-part').style.backgroundColor = '#648bf0';
+        document.querySelector('.slider-part').style.borderBottomColor = '#4e7cf0';
+        document.querySelector('.slider-part.container').style.borderBottomColor = '#4e7cf0';
+
     } else {
-        currentSlide.classList.add('fadeOutRight');
-        hiddenSlide.classList.add('fadeInLeft');
+        document.querySelector('.slider-part').style.backgroundColor = '#f16c65';
+        document.querySelector('.slider-part').style.borderBottomColor = '#ea676c';
+        document.querySelector('.slider-part.container').style.borderBottomColor = '#ea676c';
     }
 
-    mainSliderBlock.style.backgroundColor = currentBGColor;
-    mainSliderBlock.style.borderBottomColor = currentBorderColor;
-
-    swap(currentSlide, hiddenSlide);
-} */
-
-/*
-turn = true -> to left;
-turn = false -> to right;
-*/
-
-/* leftArrowClickHandler = () => {
-    leftArrow.addEventListener('click', () => {
-        slideImages(true);
-    }, false);
-    leftArrow.removeEventListener('click', () => {
-        slideImages(true);
-    }, false);
 }
 
-leftArrowClickHandler();
+slider();
 
-rightArrowClickHandler = () => {
-    rightArrow.addEventListener('click', () => {
-        slideImages(false);
-    }, false);
-    rightArrow.removeEventListener('click', () => {
-        slideImages(false);
-    }, false);
-}
+document.querySelector('.arrow.left').addEventListener('click', () => {
+    if (current - 1 === -1) {
+        current = slides.length - 1;
+    } else {
+        current--;
 
-rightArrowClickHandler(); */
+    }
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove('fadeInLeft');
+        slides[i].classList.remove('fadeOutRight');
+    }
+    slider('fadeInRight', 'fadeOutLeft');
+    changeBGColor();
+
+});
+
+
+
+document.querySelector('.arrow.right').addEventListener('click', () => {
+    if (current + 1 === slides.length) {
+        current = 0;
+    } else {
+        current++;
+    }
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove('fadeInRight');
+        slides[i].classList.remove('fadeOutLeft');
+    }
+    slider('fadeInLeft', 'fadeOutRight');
+    changeBGColor();
+});
+
+
 /*... PORTFOLIO ...*/
 
 const showExamplesInRandomWay = () => {

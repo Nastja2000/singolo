@@ -122,6 +122,27 @@ h1 {
     position: relative;
 }
 
+.slider {
+    position: relative;
+    width: 1020px;
+    height: 600px;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    opacity: 1;
+    transition: all ease 1s;
+}
+
+.slide.second {
+    height: 100%;
+}
+
+.opacity0 {
+    display: none;
+}
+
 .phone-container.vertical {
     width: 265px;
     height: 600px;
@@ -146,7 +167,7 @@ h1 {
 .phone-horizontal {
     position: absolute;
     top: 138px;
-    right: 71px;
+    right: -9px;
     height: 317px;
 }
 
@@ -160,7 +181,7 @@ h1 {
 .horizontal-off {
     width: 484px;
     height: 240px;
-    right: 111px;
+    right: 30px;
     top: 174px;
 }
 
