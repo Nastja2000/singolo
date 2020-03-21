@@ -248,6 +248,7 @@ const submitClickHandler = () => {
         if (document.querySelector('.contact-form').checkValidity()) {
             generateSubmitModal();
         }
+
     });
 }
 
@@ -258,6 +259,7 @@ const closeModalClickHandler = () => {
 
     document.querySelector('.modal--close-button').addEventListener('click', () => {
         document.querySelector('.overlay').classList.add("hidden");
+        document.querySelector('.contact-form').reset();
     });
 }
 
