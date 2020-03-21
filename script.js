@@ -3,7 +3,6 @@ window.onload = () => {
     scrollActive();
 }
 
-
 let images = [
     '<img src="./assets/images/portfolio-part/second/yellow_submarine.png" alt="yellow_submarine">',
     '<img src="./assets/images/portfolio-part/second/blond-fiona.png" alt="blond-fiona">',
@@ -13,19 +12,22 @@ let images = [
     '<img src="./assets/images/portfolio-part/second/sdk_ide_etc.png" alt="sdk_ide_etc">',
     '<img src="./assets/images/portfolio-part/second/spore.png" alt="spore">',
     '<img src="./assets/images/portfolio-part/second/chikens.png" alt="chikens">',
-    ' <img src="./assets/images/portfolio-part/second/green_monster.png" alt="green_monster">',
+    '<img src="./assets/images/portfolio-part/second/green_monster.png" alt="green_monster">',
     '<img src="./assets/images/portfolio-part/second/some_words.png" alt="some_words">',
     '<img src="./assets/images/portfolio-part/second/white_moster.png" alt="white_moster">',
     '<img src="./assets/images/portfolio-part/second/brown_staff.png" alt="brown_staff">'
 ];
 
 const addActiveClass = (element, activeClass) => {
-
     const currentActiveTab = document.querySelector(`.${activeClass}`);
     if (currentActiveTab) currentActiveTab.classList.remove(activeClass);
 
     element.classList.add(activeClass);
 };
+
+const removeActiveClass = (elements, activeClass) => {
+    elements.forEach(element => element.classList.remove(activeClass));
+}
 
 const insertImagesToExamples = (arrayOfImages) => {
     let examples = document.querySelectorAll('.examples-list .examples-item ');
@@ -76,54 +78,45 @@ function scrollActive() {
     let headerHeight = document.querySelector('.header').offsetHeight;
 
     let menuItems = headerNavbar.querySelectorAll('.item');
-    console.log(menuItems)
-
 
     let servicesTop = document.querySelector('#services').offsetTop - headerHeight;
     let portfolioTop = document.querySelector('#portfolio').offsetTop - headerHeight;
-    console.log(portfolioTop)
     let aboutTop = document.querySelector('#about').offsetTop - headerHeight;
-    console.log(aboutTop)
     let contactTop = document.querySelector('#contact').offsetTop - headerHeight;
-    console.log(contactTop)
+
     let position = window.scrollY;
-    console.log(position)
 
     if (position < servicesTop) {
-        menuItems.forEach(element => element.classList.remove('active'));
-        document.getElementById('home-item').classList.add('active');
+        removeActiveClass(menuItems, 'active');
+        addActiveClass(document.getElementById('home-item'), 'active');
     };
 
     if (position >= servicesTop && position < portfolioTop) {
-        menuItems.forEach(element => element.classList.remove('active'));
-        document.getElementById('services-item').classList.add('active');
+        removeActiveClass(menuItems, 'active');
+        addActiveClass(document.getElementById('services-item'), 'active');
     };
 
     if (position >= portfolioTop && position < aboutTop) {
-        menuItems.forEach(element => element.classList.remove('active'));
-        document.getElementById('portfolio-item').classList.add('active');
+        removeActiveClass(menuItems, 'active');
+        addActiveClass(document.getElementById('portfolio-item'), 'active');
     };
 
     if (position >= aboutTop && position < contactTop) {
-        menuItems.forEach(element => element.classList.remove('active'));
-        document.getElementById('about-item').classList.add('active');
+        removeActiveClass(menuItems, 'active');
+        addActiveClass(document.getElementById('about-item'), 'active');
     };
 
     if (position >= contactTop ||
         document.documentElement.scrollTop + document.documentElement.clientHeight == document.documentElement.scrollHeight ||
         position > document.documentElement.scrollHeight - document.documentElement.clientHeight) {
-        menuItems.forEach(element => element.classList.remove('active'));
-        document.getElementById('contact-item').classList.add('active');
+        removeActiveClass(menuItems, 'active');
+        addActiveClass(document.getElementById('contact-item'), 'active');
     };
 }
 
 
-
-
-
-
-
 /*... SLIDER ...*/
+
 const colorOfTheSecondSlide = '#648BF0';
 const colorOfTheSecondSlideBorder = '#4a7af3';
 const colorOfTheFirstSlide = '#f16c65';
@@ -189,13 +182,11 @@ const changeBGColor = () => {
         document.querySelector('.slider-part').style.backgroundColor = '#648bf0';
         document.querySelector('.slider-part').style.borderBottomColor = '#4e7cf0';
         document.querySelector('.slider-part.container').style.borderBottomColor = '#4e7cf0';
-
     } else {
         document.querySelector('.slider-part').style.backgroundColor = '#f16c65';
         document.querySelector('.slider-part').style.borderBottomColor = '#ea676c';
         document.querySelector('.slider-part.container').style.borderBottomColor = '#ea676c';
     }
-
 }
 
 slider();
@@ -205,7 +196,6 @@ document.querySelector('.arrow.left').addEventListener('click', () => {
         current = slides.length - 1;
     } else {
         current--;
-
     }
     for (let i = 0; i < slides.length; i++) {
         slides[i].classList.remove('fadeInLeft');
@@ -237,7 +227,6 @@ document.querySelector('.arrow.right').addEventListener('click', () => {
 
 const showExamplesInRandomWay = () => {
     images = shuffle(images);
-    console.log(images);
     insertImagesToExamples(images);
 };
 
@@ -250,7 +239,6 @@ portfolioNavbar.addEventListener('click', function(event) {
     if (event.target.tagName !== 'LI') return;
     addActiveClass(event.target, portfolioNavbarClass);
     showExamplesInRandomWay();
-
 });
 
 /* Highlight current example */
@@ -279,7 +267,6 @@ const generateSubmitModal = () => {
     if (nameInput.value.length === 0 && emailInput.value.length === 0) {
         alert('Заполните обязательные поля!');
     } else {
-
         if (topicInput.value.length !== 0 && descriptionInput.value.length !== 0) {
             topic.innerHTML = `Тема: ${topicInput.value}`;
             description.innerHTML = `Описание: ${descriptionInput.value}`;
@@ -291,7 +278,6 @@ const generateSubmitModal = () => {
         if (topicInput.value.length !== 0 && descriptionInput.value.length === 0) {
             topic.innerHTML = `Тема: ${topicInput.value}`;
             description.innerHTML = 'Без описания';
-
         }
         if (topicInput.value.length === 0 && descriptionInput.value.length !== 0) {
             topic.innerHTML = 'Без темы';
@@ -305,7 +291,6 @@ const submitClickHandler = () => {
         if (document.querySelector('.contact-form').checkValidity()) {
             generateSubmitModal();
         }
-
     });
 }
 
@@ -313,7 +298,6 @@ submitClickHandler();
 
 
 const closeModalClickHandler = () => {
-
     document.querySelector('.modal--close-button').addEventListener('click', () => {
         document.querySelector('.overlay').classList.add("hidden");
         document.querySelector('.contact-form').reset();
