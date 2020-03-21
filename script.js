@@ -75,9 +75,58 @@ const colorOfTheFirstSlideBorder = '#ea676c';
 const leftArrow = document.querySelector('.arrow.left');
 const rightArrow = document.querySelector('.arrow.right');
 
-console.log(document.querySelector('.slider-part'));
 
-const slideImages = (turn) => {
+/* turn off/on phones */
+
+const verticalBlock = document.querySelector('.phone-container.vertical');
+const horizontalBlock = document.querySelector('.phone-container.horizontal');
+console.log(verticalBlock);
+const verticalPhoneOn = document.querySelector('.phone-vertical');
+const verticalPhoneOff = document.querySelector('.vertical-off');
+
+const horizontalPhoneOn = document.querySelector('.phone-horizontal');
+const horizontalPhoneOff = document.querySelector('.horizontal-off');
+/* 
+verticalPhoneOn.addEventListener('click', () => {
+    console.log('hey');
+    verticalPhoneOn.classList.add('hidden');
+    verticalPhoneOff.classList.remove('hidden');
+});
+
+horizontalPhoneOn.addEventListener('click', () => {
+    console.log('hey');
+    horizontalPhoneOn.classList.add('hidden');
+    horizontalPhoneOff.classList.remove('hidden');
+}); */
+
+verticalBlock.addEventListener('click', function(event) {
+    console.log(event.target)
+    if (event.target.tagName !== 'IMG') return;
+    addActiveClass(event.target, 'hidden');
+});
+
+/* horizontalBlock.addEventListener('click', function(event) {
+    console.log(event.target)
+    if (event.target.tagName !== 'IMG') return;
+    addActiveClass(event.target, 'hidden');
+}); */
+
+const turnHorisontalPhone = () => {
+    horizontalPhoneOn.addEventListener('click', () => {
+        console.log('hey');
+        horizontalPhoneOn.classList.add('hidden');
+        horizontalPhoneOff.classList.remove('hidden');
+    });
+
+    horizontalPhoneOff.addEventListener('click', () => {
+        console.log('hey');
+        horizontalPhoneOff.classList.add('hidden');
+        horizontalPhoneOn.classList.remove('hidden');
+    });
+}
+
+turnHorisontalPhone();
+/* const slideImages = (turn) => {
     let mainSliderBlock = document.querySelector('.slider-part');
     let currentSlide = document.querySelector('.slide.current');
     let hiddenSlide = document.querySelector('.slide.hiddn');
@@ -103,14 +152,14 @@ const slideImages = (turn) => {
     mainSliderBlock.style.borderBottomColor = currentBorderColor;
 
     swap(currentSlide, hiddenSlide);
-}
+} */
 
 /*
 turn = true -> to left;
 turn = false -> to right;
 */
 
-leftArrowClickHandler = () => {
+/* leftArrowClickHandler = () => {
     leftArrow.addEventListener('click', () => {
         slideImages(true);
     }, false);
@@ -130,7 +179,7 @@ rightArrowClickHandler = () => {
     }, false);
 }
 
-rightArrowClickHandler();
+rightArrowClickHandler(); */
 /*... PORTFOLIO ...*/
 
 const showExamplesInRandomWay = () => {
