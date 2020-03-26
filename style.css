@@ -52,6 +52,15 @@ h1 {
     text-transform: uppercase;
 }
 
+@media (max-width: 375px) {
+    h1 {
+        font-size: 2rem;
+        font-weight: bold;
+        font-style: normal;
+        line-height: 2.4rem;
+    }
+}
+
 .title {
     margin: 0;
     padding: 69px 0 0 39px;
@@ -400,41 +409,113 @@ h1 {
     right: auto;
 }
 
+.hamburger__line,
+.hamburger:after,
+.hamburger:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 5px;
+    width: 100%;
+    height: 3px;
+}
+
+.hamburger {
+    display: none;
+    position: relative;
+    width: 25px;
+    height: 20px;
+    margin-right: 37px;
+}
+
+@media (max-width: 375px) {
+    .hamburger {
+        display: inline-block;
+    }
+}
+
+.hamburger:before {
+    top: 0;
+    left: 0;
+}
+
+.hamburger:after {
+    bottom: 0;
+    left: 0;
+}
+
+.hamburger__line {
+    top: calc(50% - 1.5px);
+    left: 0;
+}
+
 
 /* ... Layouts ... */
 
 .container {
-    width: 1020px;
-    height: 100%;
+    max-width: 1020px;
     margin: auto;
 }
 
-.header,
-.mask {
+@media (max-width: 1020px) {
+    .container {
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 375px) {
+    .container {
+        padding: 0 30px;
+    }
+}
+
+.header {
+    width: 100%;
     position: fixed;
     top: 0;
     bottom: auto;
     left: auto;
     right: auto;
-    width: 100%;
-    height: 88px;
     background-color: #2d2f3b;
     border-bottom: 7px solid #313745;
     z-index: 5;
 }
 
+@media (max-width: 768px) {
+    .header {
+        max-width: 768px;
+    }
+}
+
+@media (max-width: 375px) {
+    .header {
+        max-width: 375px;
+    }
+}
+
 .mask {
+    max-width: 1020px;
+    max-height: 83px;
     position: relative;
     top: 0;
     bottom: auto;
     left: auto;
     right: auto;
+    background-color: #2d2f3b;
+    border-bottom: 7px solid #313745;
 }
 
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        padding-left: 24px;
+    }
 }
 
 .logo-star {
@@ -450,6 +531,16 @@ h1 {
     color: #f16c65;
 }
 
+@media (max-width: 375px) {
+    .logo-star {
+        position: relative;
+        top: -20px;
+        bottom: auto;
+        left: 126px;
+        right: auto;
+    }
+}
+
 @-moz-document url-prefix() {
     .logo-star {
         position: relative;
@@ -462,6 +553,30 @@ h1 {
         font-style: normal;
         line-height: 2rem;
         color: #f16c65;
+    }
+}
+
+@media (max-width: 375px) {
+    .logo-text {
+        max-height: 70px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+    .logo-text div {
+        margin-left: 100px;
+    }
+}
+
+.header__hamburger {
+    margin-right: 37px;
+}
+
+@media (max-width: 375px) {
+    .header__hamburger {
+        position: absolute;
+        left: 0;
     }
 }
 
@@ -491,33 +606,25 @@ h1 {
 
 /* ... Components ... */
 
-.navbar {
-    position: relative;
-    top: 4px;
-    bottom: auto;
-    left: auto;
-    right: 47px;
-    max-width: 371px;
+@media (max-width: 375px) {
+    .navbar {
+        display: none;
+    }
 }
 
 .navbar-list {
-    padding: 0;
-    margin: 0;
-    width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    list-style: none;
-}
-
-.navbar-item,
-.item {
-    padding-left: 14.5px;
-    color: #fff;
     font-size: 1.2rem;
     font-weight: bold;
     font-style: normal;
     line-height: 1.2rem;
+}
+
+.navbar-item,
+.item {
+    list-style: none;
+    padding-left: 14.5px;
+    color: #fff;
     text-transform: uppercase;
     text-decoration: none;
 }
