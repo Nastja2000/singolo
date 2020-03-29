@@ -6,19 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Singolo</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="./sass/style.css">
+    <link rel="stylesheet" href="./style.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
-    <div id="home" class="mask"></div>
     <header class="header">
         <div class="container header-container">
             <div class="logo-text">
                 <span class="header__hamburger hamburger"><span class="hamburger__line"></span></span>
-                <div>
-                    <h1> singolo </h1>
+                <div class="logo">
+                    <h1><a href="#"> singolo </a></h1>
                     <p class="logo-star">*</p>
                 </div>
 
@@ -36,9 +34,8 @@
 
     </header>
     <main class="main">
-
-        <section class="slider-part">
-            <div class="container slider-part">
+        <section id="home" class="slider-part">
+            <div class="container slider-part slider-container">
                 <img class="arrow left" src="./assets/images/slider-part/left-arrow.svg" alt=" left-arrow ">
                 <div class="slider">
                     <div class="slide first animated">
@@ -59,10 +56,10 @@
             </div>
         </section>
         <section id="services" class="services">
-            <div class="container">
+            <div class="container services-container">
                 <h2 class="title services-title">Our Services</h2>
                 <p class="description services-description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-                <div class="services-list">
+                <div class="services-list layout-3-column">
                     <div class="services-item first">
                         <div class="item-image "><img src="./assets/images/icons/pen.svg " alt="custom design " class="image-icon pen"></div>
                         <div>
@@ -120,8 +117,8 @@
                         <li class="categories-item">Artwork</li>
                     </ul>
                 </div>
-                <li class="portfolio-examples">
-                    <ul class="examples-list">
+                <div class="portfolio-examples">
+                    <ul class="examples-list layout-4-column">
                         <li class="examples-item"></li>
                         <li class="examples-item"></li>
                         <li class="examples-item"></li>
@@ -135,14 +132,14 @@
                         <li class="examples-item"></li>
                         <li class="examples-item"></li>
                     </ul>
-            </div>
+                </div>
             </div>
         </section>
         <section id="about" class="about-us">
             <div class="container ">
                 <h2 class="about-us-title title ">about us</h2>
                 <p class="about-us-description description ">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-                <div class="people ">
+                <div class="people layout-3-column">
                     <div class="people-item ">
                         <img src="./assets/images/about-us-part/first-photo.png " alt="adam jensen " class="person-photo ">
                         <p class="person-name ">adam jensen</p>
@@ -183,17 +180,18 @@
             <div class="container ">
                 <h2 class="quote-block-title title ">Get a Quote</h2>
                 <p class="quote-block-description description ">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-                <div class="layout-columns ">
-                    <form class="contact-form " action="# " method="POST " onsubmit="return false;">
-                        <input class="form-line name" type="text " name="name " placeholder="Name (Required) " required>
-                        <input class="form-line email" type="email " name="email " placeholder="Email (Required) " required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-                        <input class="form-line topic" type="text " name="subject " placeholder="Subject ">
-                        <textarea class="form-line description-input" name="description " placeholder="Describe your project in detail... " maxlength="200"></textarea>
-                        <div class="submit-button-container ">
-                            <button type="submit" class="submit-button button " formmethod="post ">submit</button>
-                        </div>
-                    </form>
-
+                <div class="layout-2-columns contact-container">
+                    <div class="form-container">
+                        <form class="contact-form " action="# " method="POST " onsubmit="return false;">
+                            <input class="form-line name" type="text " name="name " placeholder="Name (Required) " required>
+                            <input class="form-line email" type="email " name="email " placeholder="Email (Required) " required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                            <input class="form-line topic" type="text " name="subject " placeholder="Subject ">
+                            <textarea class="form-line description-input" name="description " placeholder="Describe your project in detail... " maxlength="200"></textarea>
+                            <div class="submit-button-container ">
+                                <button type="submit" class="submit-button button " formmethod="post ">submit</button>
+                            </div>
+                        </form>
+                    </div>
                     <div class="contact-information ">
                         <p class="contact-information-title ">Contact Information</p>
                         <p class="contact-information-description ">Quisque hendrerit purus dapibus, ornare nibh vitae, viver- ra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. </p>
@@ -224,7 +222,7 @@
     </main>
     <footer class="footer ">
         <div class="container footer-container ">
-            <p class="footer-text ">© Copyright 2013</p>
+            <!-- <p class="footer-text ">© Copyright 2013</p> -->
             <div class="social-links ">
                 <a class="image-container " href="# " target="_blank "><img src="./assets/images/social-networks/facebook.png " alt="facebook " class="social-links-item facebook "></a>
                 <a class="image-container " href="# " target="_blank "><img src="./assets/images/social-networks/google+.png " alt="google+ " class="social-links-item google "></a>
