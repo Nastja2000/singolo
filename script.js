@@ -163,8 +163,6 @@ turnHorisontalPhone();
 
 let slides = document.querySelectorAll('.slider .slide');
 let current = 0;
-console.log(slides[current]);
-
 const slider = (animationIn, animationOut) => {
     for (let i = 0; i < slides.length; i++) {
 
@@ -309,3 +307,40 @@ const closeModalClickHandler = () => {
 }
 
 closeModalClickHandler();
+
+/* ADDITIONAL FEATURE FOR RESPONSIVE */
+
+/* Burger menu actions */
+
+const burgerMenuButton = document.querySelector('.header-hamburger');
+const burgerMenu = document.querySelector('.header-burger-menu');
+
+
+const openBurgerMenu = () => {
+    burgerMenuButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        burgerMenuButton.classList.toggle('burger-menu-active');
+        burgerMenu.classList.toggle('burger-menu-active');
+        document.body.classList.toggle('lock');
+    })
+}
+
+const burgerMenuItems = document.querySelector('.burger-list');
+const burgerMenuActiveClass = 'active';
+
+const chooseBurgerMenuItem = () => {
+
+    burgerMenuItems.addEventListener('click', function(event) {
+        if (event.target.tagName !== 'LI') return;
+        addActiveClass(event.target, burgerMenuActiveClass);
+
+        burgerMenuButton.classList.remove('burger-menu-active');
+        burgerMenu.classList.remove('burger-menu-active');
+        document.body.classList.remove('lock');
+        window.location.hash = `${event.target.innerHTML}`;
+
+    });
+}
+
+openBurgerMenu();
+chooseBurgerMenuItem();
