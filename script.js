@@ -180,12 +180,16 @@ const slider = (animationIn, animationOut) => {
 const changeBGColor = () => {
     if (slides[current].getAttribute('class').indexOf('second') !== -1) {
         document.querySelector('.slider-part').style.backgroundColor = '#648bf0';
+
+        document.querySelector('.slider-container').style.backgroundColor = '#648bf0';
         document.querySelector('.slider-part').style.borderBottomColor = '#4e7cf0';
-        document.querySelector('.slider-part.container').style.borderBottomColor = '#4e7cf0';
+        document.querySelector('.slider-container').style.borderBottomColor = '#4e7cf0';
+
     } else {
         document.querySelector('.slider-part').style.backgroundColor = '#f16c65';
+        document.querySelector('.slider-container').style.backgroundColor = '#f16c65';
         document.querySelector('.slider-part').style.borderBottomColor = '#ea676c';
-        document.querySelector('.slider-part.container').style.borderBottomColor = '#ea676c';
+        document.querySelector('.slider-container').style.borderBottomColor = '#ea676c';
     }
 }
 
@@ -299,7 +303,7 @@ submitClickHandler();
 
 const closeModalClickHandler = () => {
     document.querySelector('.modal--close-button').addEventListener('click', () => {
-        document.querySelector('.overlay').classList.add("hidden");
+        document.querySelector('.overlay').classList.add('hidden');
         document.querySelector('.contact-form').reset();
     });
 }
