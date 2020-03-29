@@ -7,7 +7,10 @@
 
 .active,
 .navbar-item:hover,
-.item:hover {
+.item:hover,
+.hamburger-line,
+.header-hamburger::after,
+.header-hamburger::before {
     transition: all 0.3s ease-out;
 }
 
@@ -35,6 +38,12 @@ body {
     line-height: 2.6rem;
     width: 100%;
     margin: auto;
+}
+
+@media (max-width: 375px) {
+    body.lock {
+        overflow: hidden;
+    }
 }
 
 h1 {
@@ -505,9 +514,9 @@ h1 a {
     right: auto;
 }
 
-.hamburger__line,
-.hamburger:after,
-.hamburger:before {
+.hamburger-line,
+.header-hamburger::after,
+.header-hamburger::before {
     content: "";
     display: inline-block;
     position: absolute;
@@ -515,35 +524,88 @@ h1 a {
     border-radius: 5px;
     width: 100%;
     height: 3px;
+    left: 0;
 }
 
-.hamburger {
+.header-hamburger {
     display: none;
     position: relative;
     width: 25px;
     height: 20px;
     margin-right: 37px;
+    z-index: 3;
 }
 
 @media (max-width: 375px) {
-    .hamburger {
+    .header-hamburger {
         display: inline-block;
     }
 }
 
-.hamburger:before {
+.header-hamburger::before {
     top: 0;
-    left: 0;
 }
 
-.hamburger:after {
+.header-hamburger::after {
     bottom: 0;
-    left: 0;
 }
 
-.hamburger__line {
+.header-hamburger.burger-menu-active::before {
+    transform: rotate(90deg);
+    left: 12px;
+    top: 5px;
+}
+
+.header-hamburger.burger-menu-active::after {
+    transform: rotate(90deg);
+    left: -7px;
+    top: 5px;
+}
+
+.header-hamburger.burger-menu-active .hamburger-line {
+    transform: rotate(90deg);
+    left: 3px;
+    top: 5px;
+}
+
+.hamburger-line {
     top: calc(50% - 1.5px);
-    left: 0;
+}
+
+.header-burger-menu {
+    display: none;
+}
+
+@media (max-width: 375px) {
+    .header-burger-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 80%;
+        background: #2D303A;
+        box-shadow: 0px -40px 20px 85px rgba(0, 0, 0, 0.4);
+        transition: all 0.3s ease 0.3s;
+    }
+}
+
+.burger-list {
+    display: flex;
+    flex-direction: column;
+    padding: 184px 35px 320px 90px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    font-style: normal;
+    line-height: 2.9rem;
+}
+
+.burger-list li {
+    list-style: none;
+    margin-bottom: 27px;
+}
+
+.burger-menu-active {
+    display: block;
 }
 
 
@@ -601,7 +663,6 @@ h1 a {
 @media (max-width: 375px) {
     .logo-text {
         max-height: 70px;
-        justify-content: center;
         align-items: center;
         flex-grow: 0.75;
         position: relative;
